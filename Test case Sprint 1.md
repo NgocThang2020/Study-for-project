@@ -1,0 +1,172 @@
+# Bộ kiểm thử Sprint 1
+
+**Phase 1 — Sprint 1**
+
+Phạm vi: **41 PBI, 157 test case**. Các test case được sắp xếp theo module trong cùng một bảng.
+
+> Tên test case và kết quả mong đợi được lấy từ cột “Tiêu chí / kỳ vọng” trong sheet “Kiểm thử & E2E”; mã PBI và AC được giữ để truy vết.
+
+| Mã test | Module | AC | Tên test case (tiêu chí) | Kết quả mong đợi |
+|---|---|---|---|---|
+| TC‑PB‑01‑01 | Xác thực | PB‑01 · AC01 | Cho email chưa sử dụng và đủ trường bắt buộc, khi gửi đăng ký, tạo đúng một tài khoản và có thông báo kết quả. | Cho email chưa sử dụng và đủ trường bắt buộc, khi gửi đăng ký, tạo đúng một tài khoản và có thông báo kết quả. |
+| TC‑PB‑01‑02 | Xác thực | PB‑01 · AC02 | Khi email trùng sau chuẩn hóa hoặc thiếu dữ liệu bắt buộc, không tạo tài khoản và chỉ rõ lỗi phù hợp. | Khi email trùng sau chuẩn hóa hoặc thiếu dữ liệu bắt buộc, không tạo tài khoản và chỉ rõ lỗi phù hợp. |
+| TC‑PB‑01‑03 | Xác thực | PB‑01 · AC03 | Request đăng ký không được tự đặt quyền, chức danh quản trị hoặc trạng thái membership. | Request đăng ký không được tự đặt quyền, chức danh quản trị hoặc trạng thái membership. |
+| TC‑PB‑01‑04 | Xác thực | PB‑01 · AC04 | Sau đăng ký thành công, sinh viên đăng nhập được theo chính sách tài khoản đã chốt; tải lại trang không tạo lại tài khoản. | Sau đăng ký thành công, sinh viên đăng nhập được theo chính sách tài khoản đã chốt; tải lại trang không tạo lại tài khoản. |
+| TC‑PB‑02.1‑01 | Xác thực | PB‑02.1 · AC01 | Tài khoản ACTIVE và thông tin hợp lệ tạo phiên đăng nhập; giao diện chuyển vào hệ thống. | Tài khoản ACTIVE và thông tin hợp lệ tạo phiên đăng nhập; giao diện chuyển vào hệ thống. |
+| TC‑PB‑02.1‑02 | Xác thực | PB‑02.1 · AC02 | Sai thông tin đăng nhập bị từ chối; không tạo phiên hợp lệ và không lộ mật khẩu. | Sai thông tin đăng nhập bị từ chối; không tạo phiên hợp lệ và không lộ mật khẩu. |
+| TC‑PB‑02.1‑03 | Xác thực | PB‑02.1 · AC03 | Tài khoản bị khóa/vô hiệu hóa không đăng nhập được; API bảo vệ kiểm tra trạng thái tài khoản. | Tài khoản bị khóa/vô hiệu hóa không đăng nhập được; API bảo vệ kiểm tra trạng thái tài khoản. |
+| TC‑PB‑02.1‑04 | Xác thực | PB‑02.1 · AC04 | Truy cập API bảo vệ không có phiên hợp lệ nhận 401; giao diện xử lý phiên hết hạn, không lặp chuyển hướng. | Truy cập API bảo vệ không có phiên hợp lệ nhận 401; giao diện xử lý phiên hết hạn, không lặp chuyển hướng. |
+| TC‑PB‑03‑01 | Hồ sơ | PB‑03 · AC01 | Xem được hồ sơ của tài khoản đang đăng nhập, không lấy userId tùy ý từ request để thay owner. | Xem được hồ sơ của tài khoản đang đăng nhập, không lấy userId tùy ý từ request để thay owner. |
+| TC‑PB‑03‑02 | Hồ sơ | PB‑03 · AC02 | Họ tên, số điện thoại và trường tự phục vụ đã chốt được lưu và hiển thị lại sau tải trang. | Họ tên, số điện thoại và trường tự phục vụ đã chốt được lưu và hiển thị lại sau tải trang. |
+| TC‑PB‑03‑03 | Hồ sơ | PB‑03 · AC03 | Dữ liệu không hợp lệ báo lỗi theo trường và không ghi đè dữ liệu hợp lệ trước đó. | Dữ liệu không hợp lệ báo lỗi theo trường và không ghi đè dữ liệu hợp lệ trước đó. |
+| TC‑PB‑03‑04 | Hồ sơ | PB‑03 · AC04 | Không thể tự sửa quyền, chức danh quản trị, trạng thái tài khoản hoặc membership qua API hồ sơ. | Không thể tự sửa quyền, chức danh quản trị, trạng thái tài khoản hoặc membership qua API hồ sơ. |
+| TC‑PB‑10.1‑01 | Câu lạc bộ | PB‑10.1 · AC01 | Tên và mã hợp lệ, mã chưa sử dụng thì tạo đúng một CLB. | Tên và mã hợp lệ, mã chưa sử dụng thì tạo đúng một CLB. |
+| TC‑PB‑10.1‑02 | Câu lạc bộ | PB‑10.1 · AC02 | Mã trùng theo quy tắc chuẩn hóa bị từ chối và không tạo dữ liệu trùng. | Mã trùng theo quy tắc chuẩn hóa bị từ chối và không tạo dữ liệu trùng. |
+| TC‑PB‑10.1‑03 | Câu lạc bộ | PB‑10.1 · AC03 | Không có quyền tạo CLB thì thao tác thất bại; không thể tự trở thành quản trị mọi CLB. | Không có quyền tạo CLB thì thao tác thất bại; không thể tự trở thành quản trị mọi CLB. |
+| TC‑PB‑10.1‑04 | Câu lạc bộ | PB‑10.1 · AC04 | Sau tạo, mở lại chi tiết hiển thị đúng dữ liệu; audit ghi actor và CLB mới. | Sau tạo, mở lại chi tiết hiển thị đúng dữ liệu; audit ghi actor và CLB mới. |
+| TC‑PB‑12‑01 | Khám phá CLB | PB‑12 · AC01 | CLB tồn tại và được phép xem hiển thị tên, mô tả, lĩnh vực và liên hệ được công khai. | CLB tồn tại và được phép xem hiển thị tên, mô tả, lĩnh vực và liên hệ được công khai. |
+| TC‑PB‑12‑02 | Khám phá CLB | PB‑12 · AC02 | Không trả thông tin riêng tư thành viên trong trang giới thiệu công khai. | Không trả thông tin riêng tư thành viên trong trang giới thiệu công khai. |
+| TC‑PB‑12‑03 | Khám phá CLB | PB‑12 · AC03 | CLB không tồn tại/không được phép xem được xử lý theo chính sách 404/403 thống nhất. | CLB không tồn tại/không được phép xem được xử lý theo chính sách 404/403 thống nhất. |
+| TC‑PB‑12‑04 | Khám phá CLB | PB‑12 · AC04 | CTA phù hợp trạng thái: chưa đăng ký, đang PENDING hoặc đã là thành viên; không yêu cầu membership để khám phá CLB. | CTA phù hợp trạng thái: chưa đăng ký, đang PENDING hoặc đã là thành viên; không yêu cầu membership để khám phá CLB. |
+| TC‑PB‑16.1‑01 | Thành viên | PB‑16.1 · AC01 | Tài khoản hợp lệ và đúng quyền tạo membership thuộc CLB đã chọn. | Tài khoản hợp lệ và đúng quyền tạo membership thuộc CLB đã chọn. |
+| TC‑PB‑16.1‑02 | Thành viên | PB‑16.1 · AC02 | Không tạo membership hiệu lực trùng cho cùng tài khoản và CLB, kể cả request đồng thời. | Không tạo membership hiệu lực trùng cho cùng tài khoản và CLB, kể cả request đồng thời. |
+| TC‑PB‑16.1‑03 | Thành viên | PB‑16.1 · AC03 | Thêm membership không tự cấp quyền quản trị. | Thêm membership không tự cấp quyền quản trị. |
+| TC‑PB‑16.1‑04 | Thành viên | PB‑16.1 · AC04 | Lưu ngày tham gia và audit; chính sách tái gia nhập sau LEFT theo chính sách nghiệp vụ đã chốt. | Lưu ngày tham gia và audit; chính sách tái gia nhập sau LEFT theo chính sách nghiệp vụ đã chốt. |
+| TC‑PB‑06‑01 | Phân quyền | PB‑06 · AC01 | Danh mục thể hiện mã, tên, mô tả và phạm vi hợp lệ; không trùng mã. | Danh mục thể hiện mã, tên, mô tả và phạm vi hợp lệ; không trùng mã. |
+| TC‑PB‑06‑02 | Phân quyền | PB‑06 · AC02 | Giao diện hiển thị quyền trực tiếp và quyền kế thừa từ nhóm quyền với nguồn rõ ràng. | Giao diện hiển thị quyền trực tiếp và quyền kế thừa từ nhóm quyền với nguồn rõ ràng. |
+| TC‑PB‑06‑03 | Phân quyền | PB‑06 · AC03 | Người không có quyền xem cấu hình quản trị không truy cập được dữ liệu này. | Người không có quyền xem cấu hình quản trị không truy cập được dữ liệu này. |
+| TC‑PB‑06‑04 | Phân quyền | PB‑06 · AC04 | Danh mục sử dụng cùng mã với kiểm tra backend; không xuất hiện checkbox không có chức năng tương ứng. | Danh mục sử dụng cùng mã với kiểm tra backend; không xuất hiện checkbox không có chức năng tương ứng. |
+| TC‑PB‑07.1‑01 | Phân quyền | PB‑07.1 · AC01 | Chọn tài khoản, quyền hợp lệ và phạm vi được phép rồi lưu thì ghi đúng quyền được cấp. | Chọn tài khoản, quyền hợp lệ và phạm vi được phép rồi lưu thì ghi đúng quyền được cấp. |
+| TC‑PB‑07.1‑02 | Phân quyền | PB‑07.1 · AC02 | Không có quyền cấp hoặc cấp ngoài phạm vi được ủy quyền bị từ chối; không tự nâng quyền. | Không có quyền cấp hoặc cấp ngoài phạm vi được ủy quyền bị từ chối; không tự nâng quyền. |
+| TC‑PB‑07.1‑03 | Phân quyền | PB‑07.1 · AC03 | Gửi lại cùng quyền/phạm vi không tạo liên kết trùng. | Gửi lại cùng quyền/phạm vi không tạo liên kết trùng. |
+| TC‑PB‑07.1‑04 | Phân quyền | PB‑07.1 · AC04 | Audit thể hiện actor, người nhận, mã quyền, phạm vi và thời điểm; UI hiển thị nguồn quyền sau lưu. | Audit thể hiện actor, người nhận, mã quyền, phạm vi và thời điểm; UI hiển thị nguồn quyền sau lưu. |
+| TC‑PB‑08‑01 | Phân quyền | PB‑08 · AC01 | Quyền tại CLB A cho phép đúng hành động ở A; cùng hành động tại B bị từ chối. | Quyền tại CLB A cho phép đúng hành động ở A; cùng hành động tại B bị từ chối. |
+| TC‑PB‑08‑02 | Phân quyền | PB‑08 · AC02 | Quyền ở ban A không cho phép quản lý ban B; tài nguyên con được đối chiếu CLB/ban thực tế ở backend. | Quyền ở ban A không cho phép quản lý ban B; tài nguyên con được đối chiếu CLB/ban thực tế ở backend. |
+| TC‑PB‑08‑03 | Phân quyền | PB‑08 · AC03 | GLOBAL chỉ áp dụng cho hành động đã cấp, không tự cấp mọi quyền. | GLOBAL chỉ áp dụng cho hành động đã cấp, không tự cấp mọi quyền. |
+| TC‑PB‑08‑04 | Phân quyền | PB‑08 · AC04 | Backend kiểm tra cả API danh sách và chi tiết; sửa ID hoặc gọi trực tiếp không vượt quyền. | Backend kiểm tra cả API danh sách và chi tiết; sửa ID hoặc gọi trực tiếp không vượt quyền. |
+| TC‑PB‑07.2‑01 | Phân quyền | PB‑07.2 · AC01 | Người có quyền thu hồi chỉ thu hồi được grant thuộc phạm vi được phép. | Người có quyền thu hồi chỉ thu hồi được grant thuộc phạm vi được phép. |
+| TC‑PB‑07.2‑02 | Phân quyền | PB‑07.2 · AC02 | Sau khi xóa nguồn cấp cuối cùng của một quyền, request bảo vệ tiếp theo bị từ chối theo cơ chế vô hiệu cache. | Sau khi xóa nguồn cấp cuối cùng của một quyền, request bảo vệ tiếp theo bị từ chối theo cơ chế vô hiệu cache. |
+| TC‑PB‑07.2‑03 | Phân quyền | PB‑07.2 · AC03 | Nếu quyền còn từ nhóm quyền, giao diện chỉ rõ nguồn còn lại; không báo đã mất mọi quyền. | Nếu quyền còn từ nhóm quyền, giao diện chỉ rõ nguồn còn lại; không báo đã mất mọi quyền. |
+| TC‑PB‑07.2‑04 | Phân quyền | PB‑07.2 · AC04 | Thay đổi được audit; request thu hồi ngoài quyền không làm thay đổi dữ liệu. | Thay đổi được audit; request thu hồi ngoài quyền không làm thay đổi dữ liệu. |
+| TC‑PB‑54‑01 | Làm rõ nghiệp vụ | PB‑54 · AC01 | PO ghi nhận câu trả lời và quyết định nghiệp vụ, kèm ngày và nguồn xác nhận thực tế. | PO ghi nhận câu trả lời và quyết định nghiệp vụ, kèm ngày và nguồn xác nhận thực tế. |
+| TC‑PB‑54‑02 | Làm rõ nghiệp vụ | PB‑54 · AC02 | Có ví dụ cho grant/revoke một hoặc nhiều nguồn, scope CLB/ban và trần ủy quyền. | Có ví dụ cho grant/revoke một hoặc nhiều nguồn, scope CLB/ban và trần ủy quyền. |
+| TC‑PB‑54‑03 | Làm rõ nghiệp vụ | PB‑54 · AC03 | Cập nhật AC và bộ test PB-07/PB-08/PB-09; không code rule tự nâng quyền theo suy đoán. | Cập nhật AC và bộ test PB-07/PB-08/PB-09; không code rule tự nâng quyền theo suy đoán. |
+| TC‑PB‑39.1‑01 | Hạ tầng & chất lượng | PB‑39.1 · AC01 | Từ máy sạch/cấu hình mô tả, thành viên khởi động được UI, API và DB theo README. | Từ máy sạch/cấu hình mô tả, thành viên khởi động được UI, API và DB theo README. |
+| TC‑PB‑39.1‑02 | Hạ tầng & chất lượng | PB‑39.1 · AC02 | Tệp cấu hình mẫu không chứa secret thật; runtime/tool version được ghi rõ. | Tệp cấu hình mẫu không chứa secret thật; runtime/tool version được ghi rõ. |
+| TC‑PB‑39.1‑03 | Hạ tầng & chất lượng | PB‑39.1 · AC03 | Quy ước branch, review, commit và xử lý xung đột được ghi nhận; không giả định PO/SM phân việc. | Quy ước branch, review, commit và xử lý xung đột được ghi nhận; không giả định PO/SM phân việc. |
+| TC‑PB‑39.1‑04 | Hạ tầng & chất lượng | PB‑39.1 · AC04 | Lệnh chạy và cổng dịch vụ không mâu thuẫn giữa tài liệu và ứng dụng. | Lệnh chạy và cổng dịch vụ không mâu thuẫn giữa tài liệu và ứng dụng. |
+| TC‑PB‑39.2‑01 | Database & migration | PB‑39.2 · AC01 | Database sạch chạy được toàn bộ migration theo cơ chế hiện có. | Database sạch chạy được toàn bộ migration theo cơ chế hiện có. |
+| TC‑PB‑39.2‑02 | Database & migration | PB‑39.2 · AC02 | Email/mã CLB và các khóa nghiệp vụ có bảo vệ trùng phù hợp. | Email/mã CLB và các khóa nghiệp vụ có bảo vệ trùng phù hợp. |
+| TC‑PB‑39.2‑03 | Database & migration | PB‑39.2 · AC03 | Tạo người quản trị đầu tiên bằng cấu hình an toàn, không hard-code mật khẩu production. | Tạo người quản trị đầu tiên bằng cấu hình an toàn, không hard-code mật khẩu production. |
+| TC‑PB‑39.2‑04 | Database & migration | PB‑39.2 · AC04 | Chạy lại không nhân bản seed; kiểm tra bảo toàn dữ liệu khi nâng cấp schema. | Chạy lại không nhân bản seed; kiểm tra bảo toàn dữ liệu khi nâng cấp schema. |
+| TC‑PB‑39.3‑01 | API contract | PB‑39.3 · AC01 | Hợp đồng mô tả method/path, request/response, permission/scope và lỗi cho endpoint được bàn giao. | Hợp đồng mô tả method/path, request/response, permission/scope và lỗi cho endpoint được bàn giao. |
+| TC‑PB‑39.3‑02 | API contract | PB‑39.3 · AC02 | Frontend dùng đúng hợp đồng và prefix API hiện có; không tạo endpoint/entity trùng để né tích hợp. | Frontend dùng đúng hợp đồng và prefix API hiện có; không tạo endpoint/entity trùng để né tích hợp. |
+| TC‑PB‑39.3‑03 | API contract | PB‑39.3 · AC03 | Negative tests xác nhận 400/401/403/404/409 theo contract hiện tại. | Negative tests xác nhận 400/401/403/404/409 theo contract hiện tại. |
+| TC‑PB‑39.3‑04 | API contract | PB‑39.3 · AC04 | Thay đổi contract có test/phân tích tác động và tài liệu được cập nhật. | Thay đổi contract có test/phân tích tác động và tài liệu được cập nhật. |
+| TC‑PB‑39.4‑01 | UI/UX nền | PB‑39.4 · AC01 | Có thành phần form/table/loading/empty/error/forbidden dùng lại được và ví dụ sử dụng. | Có thành phần form/table/loading/empty/error/forbidden dùng lại được và ví dụ sử dụng. |
+| TC‑PB‑39.4‑02 | UI/UX nền | PB‑39.4 · AC02 | Giữ phong cách sản phẩm hiện có; không tự đổi thương hiệu hoặc bố cục toàn ứng dụng. | Giữ phong cách sản phẩm hiện có; không tự đổi thương hiệu hoặc bố cục toàn ứng dụng. |
+| TC‑PB‑39.4‑03 | UI/UX nền | PB‑39.4 · AC03 | Điều hướng bằng bàn phím, nhãn trường và hiển thị trên mobile/desktop được kiểm tra theo YC-15. | Điều hướng bằng bàn phím, nhãn trường và hiển thị trên mobile/desktop được kiểm tra theo YC-15. |
+| TC‑PB‑39.4‑04 | UI/UX nền | PB‑39.4 · AC04 | Ẩn/disable nút hỗ trợ UX nhưng không thay kiểm tra permission backend. | Ẩn/disable nút hỗ trợ UX nhưng không thay kiểm tra permission backend. |
+| TC‑PB‑40.1‑01 | Kiểm thử & CI | PB‑40.1 · AC01 | Có lệnh chạy unit/integration tests và báo số pass/fail/skipped với mã thoát. | Có lệnh chạy unit/integration tests và báo số pass/fail/skipped với mã thoát. |
+| TC‑PB‑40.1‑02 | Kiểm thử & CI | PB‑40.1 · AC02 | Kiểm thử permission/scope và ràng buộc dữ liệu chạy trên cấu hình DB phù hợp. | Kiểm thử permission/scope và ràng buộc dữ liệu chạy trên cấu hình DB phù hợp. |
+| TC‑PB‑40.1‑03 | Kiểm thử & CI | PB‑40.1 · AC03 | Test thất bại làm job CI thất bại; không xóa test hay skip để tạo kết quả xanh. | Test thất bại làm job CI thất bại; không xóa test hay skip để tạo kết quả xanh. |
+| TC‑PB‑40.1‑04 | Kiểm thử & CI | PB‑40.1 · AC04 | Lưu report gắn với commit và môi trường, không lấy số test từ README làm kết quả chạy mới. | Lưu report gắn với commit và môi trường, không lấy số test từ README làm kết quả chạy mới. |
+| TC‑PB‑40.2‑01 | Kiểm thử & CI | PB‑40.2 · AC01 | Có lệnh lint/typecheck/build/test theo toolchain đang dùng. | Có lệnh lint/typecheck/build/test theo toolchain đang dùng. |
+| TC‑PB‑40.2‑02 | Kiểm thử & CI | PB‑40.2 · AC02 | Kiểm tra validation form, refresh/logout, hiển thị 403 và cache sau đổi tài khoản. | Kiểm tra validation form, refresh/logout, hiển thị 403 và cache sau đổi tài khoản. |
+| TC‑PB‑40.2‑03 | Kiểm thử & CI | PB‑40.2 · AC03 | Build/test failure được CI phản ánh; report gắn commit. | Build/test failure được CI phản ánh; report gắn commit. |
+| TC‑PB‑40.2‑04 | Kiểm thử & CI | PB‑40.2 · AC04 | Mock test được ghi rõ, không được dùng thay bằng chứng luồng chạy với API thật. | Mock test được ghi rõ, không được dùng thay bằng chứng luồng chạy với API thật. |
+| TC‑PB‑40.3‑01 | Kiểm thử & CI | PB‑40.3 · AC01 | Chạy đăng ký/đăng nhập → hồ sơ → tạo CLB/ban → thêm member bằng UI và API thật. | Chạy đăng ký/đăng nhập → hồ sơ → tạo CLB/ban → thêm member bằng UI và API thật. |
+| TC‑PB‑40.3‑02 | Kiểm thử & CI | PB‑40.3 · AC02 | Không quyền → bị từ chối; cấp đúng scope → thành công; thu hồi nguồn cuối → bị từ chối. | Không quyền → bị từ chối; cấp đúng scope → thành công; thu hồi nguồn cuối → bị từ chối. |
+| TC‑PB‑40.3‑03 | Kiểm thử & CI | PB‑40.3 · AC03 | Có báo cáo dữ liệu đầu vào, expected/actual, screenshot/log đã che thông tin nhạy cảm. | Có báo cáo dữ liệu đầu vào, expected/actual, screenshot/log đã che thông tin nhạy cảm. |
+| TC‑PB‑40.3‑04 | Kiểm thử & CI | PB‑40.3 · AC04 | Chưa chạy hoặc bị thiếu môi trường được ghi Not run/Blocked, không ghi Pass. | Chưa chạy hoặc bị thiếu môi trường được ghi Not run/Blocked, không ghi Pass. |
+| TC‑PB‑52‑01 | Quản lý lỗi | PB‑52 · AC01 | Mẫu bug có môi trường/commit, bước tái hiện, expected/actual, evidence, severity và PBI liên quan. | Mẫu bug có môi trường/commit, bước tái hiện, expected/actual, evidence, severity và PBI liên quan. |
+| TC‑PB‑52‑02 | Quản lý lỗi | PB‑52 · AC02 | Chỉ lỗi đã tái hiện/được xác nhận mới tạo hạng mục Lỗi trong Product Backlog; lỗi dự kiến là kịch bản kiểm tra. | Chỉ lỗi đã tái hiện/được xác nhận mới tạo hạng mục Lỗi trong Product Backlog; lỗi dự kiến là kịch bản kiểm tra. |
+| TC‑PB‑52‑03 | Quản lý lỗi | PB‑52 · AC03 | Lỗi không đóng chỉ vì có commit sửa; cần retest, hồi quy và người xác nhận. | Lỗi không đóng chỉ vì có commit sửa; cần retest, hồi quy và người xác nhận. |
+| TC‑PB‑52‑04 | Quản lý lỗi | PB‑52 · AC04 | Lỗi tái mở, trùng, không tái hiện và lỗi phát sinh ở từng phase có trạng thái rõ. | Lỗi tái mở, trùng, không tái hiện và lỗi phát sinh ở từng phase có trạng thái rõ. |
+| TC‑PB‑53‑01 | Dữ liệu kiểm thử | PB‑53 · AC01 | Có tối thiểu hai CLB và hai ban để test cross-scope, tài khoản có/không có quyền. | Có tối thiểu hai CLB và hai ban để test cross-scope, tài khoản có/không có quyền. |
+| TC‑PB‑53‑02 | Dữ liệu kiểm thử | PB‑53 · AC02 | Dữ liệu mẫu có trạng thái biên; bổ sung applications/events/tasks/attendance theo từng phase. | Dữ liệu mẫu có trạng thái biên; bổ sung applications/events/tasks/attendance theo từng phase. |
+| TC‑PB‑53‑03 | Dữ liệu kiểm thử | PB‑53 · AC03 | Không dùng dữ liệu cá nhân thật hoặc credential production; chỉ reset môi trường test. | Không dùng dữ liệu cá nhân thật hoặc credential production; chỉ reset môi trường test. |
+| TC‑PB‑53‑04 | Dữ liệu kiểm thử | PB‑53 · AC04 | Seed có hướng dẫn và chạy lặp không làm sai test. | Seed có hướng dẫn và chạy lặp không làm sai test. |
+| TC‑PB‑02.2‑01 | Xác thực | PB‑02.2 · AC01 | Refresh token hợp lệ tạo phiên/token mới theo cơ chế Phase 1 hiện có. | Refresh token hợp lệ tạo phiên/token mới theo cơ chế Phase 1 hiện có. |
+| TC‑PB‑02.2‑02 | Xác thực | PB‑02.2 · AC02 | Refresh token hết hạn, đã thu hồi hoặc không hợp lệ bị từ chối; không tạo phiên mới. | Refresh token hết hạn, đã thu hồi hoặc không hợp lệ bị từ chối; không tạo phiên mới. |
+| TC‑PB‑02.2‑03 | Xác thực | PB‑02.2 · AC03 | Nhiều request cùng hết phiên không dẫn tới vòng lặp refresh; frontend kết thúc ở một trạng thái xác định. | Nhiều request cùng hết phiên không dẫn tới vòng lặp refresh; frontend kết thúc ở một trạng thái xác định. |
+| TC‑PB‑02.2‑04 | Xác thực | PB‑02.2 · AC04 | Tài khoản bị khóa hoặc đổi mật khẩu tuân theo chính sách thu hồi phiên đã chốt. | Tài khoản bị khóa hoặc đổi mật khẩu tuân theo chính sách thu hồi phiên đã chốt. |
+| TC‑PB‑02.3‑01 | Xác thực | PB‑02.3 · AC01 | Đăng xuất xóa trạng thái xác thực phía giao diện và thu hồi khả năng làm mới phiên theo hợp đồng hiện có. | Đăng xuất xóa trạng thái xác thực phía giao diện và thu hồi khả năng làm mới phiên theo hợp đồng hiện có. |
+| TC‑PB‑02.3‑02 | Xác thực | PB‑02.3 · AC02 | Refresh token của phiên đã đăng xuất không thể tạo access token mới. | Refresh token của phiên đã đăng xuất không thể tạo access token mới. |
+| TC‑PB‑02.3‑03 | Xác thực | PB‑02.3 · AC03 | Quay lại trang bảo vệ sau đăng xuất không hiển thị dữ liệu riêng tư từ cache. | Quay lại trang bảo vệ sau đăng xuất không hiển thị dữ liệu riêng tư từ cache. |
+| TC‑PB‑02.3‑04 | Xác thực | PB‑02.3 · AC04 | Phạm vi vô hiệu access token và các thiết bị khác được ghi rõ theo chính sách nghiệp vụ đã chốt, không suy diễn từ thao tác xóa token trên trình duyệt. | Phạm vi vô hiệu access token và các thiết bị khác được ghi rõ theo chính sách nghiệp vụ đã chốt, không suy diễn từ thao tác xóa token trên trình duyệt. |
+| TC‑PB‑02.4‑01 | Xác thực | PB‑02.4 · AC01 | Mật khẩu hiện tại đúng và mật khẩu mới hợp lệ thì đổi thành công. | Mật khẩu hiện tại đúng và mật khẩu mới hợp lệ thì đổi thành công. |
+| TC‑PB‑02.4‑02 | Xác thực | PB‑02.4 · AC02 | Sai mật khẩu hiện tại hoặc dữ liệu mới không hợp lệ thì không thay đổi thông tin xác thực. | Sai mật khẩu hiện tại hoặc dữ liệu mới không hợp lệ thì không thay đổi thông tin xác thực. |
+| TC‑PB‑02.4‑03 | Xác thực | PB‑02.4 · AC03 | Mật khẩu cũ không đăng nhập được sau khi đổi; chính sách phiên còn lại được áp dụng nhất quán. | Mật khẩu cũ không đăng nhập được sau khi đổi; chính sách phiên còn lại được áp dụng nhất quán. |
+| TC‑PB‑02.4‑04 | Xác thực | PB‑02.4 · AC04 | Không có request nào cho phép đổi mật khẩu tài khoản khác bằng cách sửa userId. | Không có request nào cho phép đổi mật khẩu tài khoản khác bằng cách sửa userId. |
+| TC‑PB‑04‑01 | Tài khoản | PB‑04 · AC01 | Có quyền tra cứu thì xem được danh sách phân trang và chi tiết tài khoản được phép. | Có quyền tra cứu thì xem được danh sách phân trang và chi tiết tài khoản được phép. |
+| TC‑PB‑04‑02 | Tài khoản | PB‑04 · AC02 | Tìm theo trường cho phép và lọc trạng thái trả dữ liệu khớp; không có kết quả hiển thị trạng thái rỗng. | Tìm theo trường cho phép và lọc trạng thái trả dữ liệu khớp; không có kết quả hiển thị trạng thái rỗng. |
+| TC‑PB‑04‑03 | Tài khoản | PB‑04 · AC03 | Không có quyền nhận phản hồi từ chối; sửa tham số userId không làm lộ hồ sơ ngoài quyền. | Không có quyền nhận phản hồi từ chối; sửa tham số userId không làm lộ hồ sơ ngoài quyền. |
+| TC‑PB‑04‑04 | Tài khoản | PB‑04 · AC04 | Không trả password hash, token hoặc dữ liệu bí mật trong danh sách/chi tiết. | Không trả password hash, token hoặc dữ liệu bí mật trong danh sách/chi tiết. |
+| TC‑PB‑05.1‑01 | Tài khoản | PB‑05.1 · AC01 | Đúng quyền và dữ liệu hợp lệ tạo một tài khoản duy nhất. | Đúng quyền và dữ liệu hợp lệ tạo một tài khoản duy nhất. |
+| TC‑PB‑05.1‑02 | Tài khoản | PB‑05.1 · AC02 | Email trùng hoặc request thiếu dữ liệu bị từ chối và không tạo bản ghi dở dang. | Email trùng hoặc request thiếu dữ liệu bị từ chối và không tạo bản ghi dở dang. |
+| TC‑PB‑05.1‑03 | Tài khoản | PB‑05.1 · AC03 | Tạo tài khoản không ngầm cấp quyền quản trị; thông tin khởi tạo mật khẩu thực hiện theo chính sách nghiệp vụ đã chốt. | Tạo tài khoản không ngầm cấp quyền quản trị; thông tin khởi tạo mật khẩu thực hiện theo chính sách nghiệp vụ đã chốt. |
+| TC‑PB‑05.1‑04 | Tài khoản | PB‑05.1 · AC04 | Thao tác có audit ghi người tạo, tài khoản đích và thời điểm, không ghi mật khẩu. | Thao tác có audit ghi người tạo, tài khoản đích và thời điểm, không ghi mật khẩu. |
+| TC‑PB‑05.2‑01 | Tài khoản | PB‑05.2 · AC01 | Có quyền phù hợp sửa được các trường được phép của tài khoản tồn tại. | Có quyền phù hợp sửa được các trường được phép của tài khoản tồn tại. |
+| TC‑PB‑05.2‑02 | Tài khoản | PB‑05.2 · AC02 | Không chấp nhận các trường quyền/mật khẩu qua DTO sửa thông tin hồ sơ. | Không chấp nhận các trường quyền/mật khẩu qua DTO sửa thông tin hồ sơ. |
+| TC‑PB‑05.2‑03 | Tài khoản | PB‑05.2 · AC03 | Thay đổi định danh tuân theo kiểm tra trùng và quy trình xác minh đã chốt. | Thay đổi định danh tuân theo kiểm tra trùng và quy trình xác minh đã chốt. |
+| TC‑PB‑05.2‑04 | Tài khoản | PB‑05.2 · AC04 | Audit ghi thay đổi cần truy vết; tài khoản khác không có quyền bị từ chối. | Audit ghi thay đổi cần truy vết; tài khoản khác không có quyền bị từ chối. |
+| TC‑PB‑05.3‑01 | Tài khoản | PB‑05.3 · AC01 | Đúng quyền chuyển được ACTIVE sang LOCKED và mở lại theo trạng thái hợp lệ. | Đúng quyền chuyển được ACTIVE sang LOCKED và mở lại theo trạng thái hợp lệ. |
+| TC‑PB‑05.3‑02 | Tài khoản | PB‑05.3 · AC02 | Tài khoản LOCKED không thể gọi chức năng bảo vệ dù còn access token chưa hết hạn. | Tài khoản LOCKED không thể gọi chức năng bảo vệ dù còn access token chưa hết hạn. |
+| TC‑PB‑05.3‑03 | Tài khoản | PB‑05.3 · AC03 | Không có quyền khóa/mở khóa bị từ chối và trạng thái không đổi. | Không có quyền khóa/mở khóa bị từ chối và trạng thái không đổi. |
+| TC‑PB‑05.3‑04 | Tài khoản | PB‑05.3 · AC04 | Ghi audit và ngăn thao tác làm mất người quản trị cuối cùng theo chính sách được xác nhận. | Ghi audit và ngăn thao tác làm mất người quản trị cuối cùng theo chính sách được xác nhận. |
+| TC‑PB‑05.4‑01 | Tài khoản | PB‑05.4 · AC01 | Người đúng quyền thực hiện xác nhận trước khi đổi sang trạng thái vô hiệu. | Người đúng quyền thực hiện xác nhận trước khi đổi sang trạng thái vô hiệu. |
+| TC‑PB‑05.4‑02 | Tài khoản | PB‑05.4 · AC02 | Tài khoản vô hiệu không đăng nhập, làm mới phiên hoặc gọi API bảo vệ được. | Tài khoản vô hiệu không đăng nhập, làm mới phiên hoặc gọi API bảo vệ được. |
+| TC‑PB‑05.4‑03 | Tài khoản | PB‑05.4 · AC03 | Membership, đơn và lịch sử không bị xóa ngầm do thao tác vô hiệu tài khoản. | Membership, đơn và lịch sử không bị xóa ngầm do thao tác vô hiệu tài khoản. |
+| TC‑PB‑05.4‑04 | Tài khoản | PB‑05.4 · AC04 | Có audit; quy tắc khôi phục tài khoản và quản trị viên cuối cùng được chốt trước nghiệm thu. | Có audit; quy tắc khôi phục tài khoản và quản trị viên cuối cùng được chốt trước nghiệm thu. |
+| TC‑PB‑09.1‑01 | Phân quyền | PB‑09.1 · AC01 | Tạo nhóm quyền với tên và các mã quyền hợp lệ; không chấp nhận mã không tồn tại. | Tạo nhóm quyền với tên và các mã quyền hợp lệ; không chấp nhận mã không tồn tại. |
+| TC‑PB‑09.1‑02 | Phân quyền | PB‑09.1 · AC02 | Chỉnh sửa thành phần quyền hiển thị tác động dự kiến trước khi lưu theo chính sách nghiệp vụ đã chốt. | Chỉnh sửa thành phần quyền hiển thị tác động dự kiến trước khi lưu theo chính sách nghiệp vụ đã chốt. |
+| TC‑PB‑09.1‑03 | Phân quyền | PB‑09.1 · AC03 | Nhóm hệ thống và nhóm tùy chỉnh được bảo vệ theo chính sách được xác nhận. | Nhóm hệ thống và nhóm tùy chỉnh được bảo vệ theo chính sách được xác nhận. |
+| TC‑PB‑09.1‑04 | Phân quyền | PB‑09.1 · AC04 | Đổi tên nhóm không đổi logic authorization; mọi thay đổi nhạy cảm có audit. | Đổi tên nhóm không đổi logic authorization; mọi thay đổi nhạy cảm có audit. |
+| TC‑PB‑09.2‑01 | Phân quyền | PB‑09.2 · AC01 | Gán nhóm hợp lệ trong scope cho phép tạo quyền hiệu lực đúng nhóm và scope. | Gán nhóm hợp lệ trong scope cho phép tạo quyền hiệu lực đúng nhóm và scope. |
+| TC‑PB‑09.2‑02 | Phân quyền | PB‑09.2 · AC02 | Gỡ nhóm không xóa các grant trực tiếp hoặc nhóm khác; UI vẫn hiển thị nguồn còn hiệu lực. | Gỡ nhóm không xóa các grant trực tiếp hoặc nhóm khác; UI vẫn hiển thị nguồn còn hiệu lực. |
+| TC‑PB‑09.2‑03 | Phân quyền | PB‑09.2 · AC03 | Không thể gán một nhóm chứa quyền vượt phạm vi được ủy quyền. | Không thể gán một nhóm chứa quyền vượt phạm vi được ủy quyền. |
+| TC‑PB‑09.2‑04 | Phân quyền | PB‑09.2 · AC04 | Tự nâng quyền, gán trùng và tài nguyên scope không hợp lệ đều được xử lý an toàn, có audit khi thay đổi. | Tự nâng quyền, gán trùng và tài nguyên scope không hợp lệ đều được xử lý an toàn, có audit khi thay đổi. |
+| TC‑PB‑10.2‑01 | Câu lạc bộ | PB‑10.2 · AC01 | Đúng quyền và phạm vi sửa được trường được phép; tải lại thấy dữ liệu đã lưu. | Đúng quyền và phạm vi sửa được trường được phép; tải lại thấy dữ liệu đã lưu. |
+| TC‑PB‑10.2‑02 | Câu lạc bộ | PB‑10.2 · AC02 | Không thể sửa CLB khác bằng thay ID hoặc tham số scope. | Không thể sửa CLB khác bằng thay ID hoặc tham số scope. |
+| TC‑PB‑10.2‑03 | Câu lạc bộ | PB‑10.2 · AC03 | Dữ liệu không hợp lệ giữ nguyên bản cũ; lỗi được hiển thị theo trường. | Dữ liệu không hợp lệ giữ nguyên bản cũ; lỗi được hiển thị theo trường. |
+| TC‑PB‑10.2‑04 | Câu lạc bộ | PB‑10.2 · AC04 | Logo/ảnh nếu sử dụng phải theo hạ tầng hiện có; không ngầm mở thêm module lưu trữ; thay đổi có audit. | Logo/ảnh nếu sử dụng phải theo hạ tầng hiện có; không ngầm mở thêm module lưu trữ; thay đổi có audit. |
+| TC‑PB‑10.3‑01 | Câu lạc bộ | PB‑10.3 · AC01 | Thay đổi trạng thái yêu cầu quyền phù hợp và xác nhận hành động. | Thay đổi trạng thái yêu cầu quyền phù hợp và xác nhận hành động. |
+| TC‑PB‑10.3‑02 | Câu lạc bộ | PB‑10.3 · AC02 | CLB vô hiệu không nhận đơn đăng ký mới. | CLB vô hiệu không nhận đơn đăng ký mới. |
+| TC‑PB‑10.3‑03 | Câu lạc bộ | PB‑10.3 · AC03 | Không xóa ngầm thành viên, đơn hoặc lịch sử của CLB khi vô hiệu. | Không xóa ngầm thành viên, đơn hoặc lịch sử của CLB khi vô hiệu. |
+| TC‑PB‑10.3‑04 | Câu lạc bộ | PB‑10.3 · AC04 | Quyền xem lịch sử và tác động đến sự kiện đang mở theo chính sách nghiệp vụ đã chốt; có audit. | Quyền xem lịch sử và tác động đến sự kiện đang mở theo chính sách nghiệp vụ đã chốt; có audit. |
+| TC‑PB‑13.1‑01 | Cơ cấu ban | PB‑13.1 · AC01 | Xem danh sách và chi tiết ban trong phạm vi được phép. | Xem danh sách và chi tiết ban trong phạm vi được phép. |
+| TC‑PB‑13.1‑02 | Cơ cấu ban | PB‑13.1 · AC02 | Các ban và liên kết CLB hiển thị đúng; ban không tồn tại được xử lý rõ. | Các ban và liên kết CLB hiển thị đúng; ban không tồn tại được xử lý rõ. |
+| TC‑PB‑13.1‑03 | Cơ cấu ban | PB‑13.1 · AC03 | Thông tin chi tiết thành viên ban không được trả chỉ vì có quyền xem giới thiệu ban. | Thông tin chi tiết thành viên ban không được trả chỉ vì có quyền xem giới thiệu ban. |
+| TC‑PB‑13.2‑01 | Cơ cấu ban | PB‑13.2 · AC01 | Đúng quyền tạo ban thuộc CLB hợp lệ, không cho gán sang CLB khác ngoài phạm vi. | Đúng quyền tạo ban thuộc CLB hợp lệ, không cho gán sang CLB khác ngoài phạm vi. |
+| TC‑PB‑13.2‑02 | Cơ cấu ban | PB‑13.2 · AC02 | Tên và dữ liệu bắt buộc hợp lệ được lưu; quy tắc trùng tên trong CLB áp dụng nhất quán. | Tên và dữ liệu bắt buộc hợp lệ được lưu; quy tắc trùng tên trong CLB áp dụng nhất quán. |
+| TC‑PB‑13.2‑03 | Cơ cấu ban | PB‑13.2 · AC03 | Sửa ban không đổi quan hệ CLB trái phép; mọi thay đổi quan trọng được audit. | Sửa ban không đổi quan hệ CLB trái phép; mọi thay đổi quan trọng được audit. |
+| TC‑PB‑13.3‑01 | Cơ cấu ban | PB‑13.3 · AC01 | Chỉ người đúng quyền thay trạng thái ban trong phạm vi được phép. | Chỉ người đúng quyền thay trạng thái ban trong phạm vi được phép. |
+| TC‑PB‑13.3‑02 | Cơ cấu ban | PB‑13.3 · AC02 | Ban ngừng hoạt động không nhận phân công thành viên mới theo chính sách đã chốt. | Ban ngừng hoạt động không nhận phân công thành viên mới theo chính sách đã chốt. |
+| TC‑PB‑13.3‑03 | Cơ cấu ban | PB‑13.3 · AC03 | Không xóa lịch sử hoặc thành viên ngầm; tác động tới nhiệm vụ/quyền được làm rõ và audit. | Không xóa lịch sử hoặc thành viên ngầm; tác động tới nhiệm vụ/quyền được làm rõ và audit. |
+| TC‑PB‑14.1‑01 | Chức danh tổ chức | PB‑14.1 · AC01 | Chọn người có membership phù hợp và lưu chức danh theo quy tắc số lượng đã chốt. | Chọn người có membership phù hợp và lưu chức danh theo quy tắc số lượng đã chốt. |
+| TC‑PB‑14.1‑02 | Chức danh tổ chức | PB‑14.1 · AC02 | Chức danh hiển thị đúng trong cơ cấu CLB sau thay đổi. | Chức danh hiển thị đúng trong cơ cấu CLB sau thay đổi. |
+| TC‑PB‑14.1‑03 | Chức danh tổ chức | PB‑14.1 · AC03 | Thay chức danh không ngầm cấp mọi permission; preset chỉ áp dụng khi cấu hình được xác nhận. | Thay chức danh không ngầm cấp mọi permission; preset chỉ áp dụng khi cấu hình được xác nhận. |
+| TC‑PB‑14.1‑04 | Chức danh tổ chức | PB‑14.1 · AC04 | Có audit người thay đổi, người được chỉ định và phạm vi CLB. | Có audit người thay đổi, người được chỉ định và phạm vi CLB. |
+| TC‑PB‑14.2‑01 | Chức danh tổ chức | PB‑14.2 · AC01 | Người được chỉ định thuộc CLB và đáp ứng điều kiện của ban đã chốt. | Người được chỉ định thuộc CLB và đáp ứng điều kiện của ban đã chốt. |
+| TC‑PB‑14.2‑02 | Chức danh tổ chức | PB‑14.2 · AC02 | Chỉ thay đổi trưởng ban trong phạm vi được cấp; không sửa ban CLB khác. | Chỉ thay đổi trưởng ban trong phạm vi được cấp; không sửa ban CLB khác. |
+| TC‑PB‑14.2‑03 | Chức danh tổ chức | PB‑14.2 · AC03 | Việc thay trưởng ban và tác động preset được ghi rõ, audit và không nâng quyền tự động ngoài cấu hình. | Việc thay trưởng ban và tác động preset được ghi rõ, audit và không nâng quyền tự động ngoài cấu hình. |
+| TC‑PB‑15.1‑01 | Thành viên | PB‑15.1 · AC01 | Đúng quyền xem danh sách trong CLB, có tìm kiếm/phân trang theo dữ liệu cho phép. | Đúng quyền xem danh sách trong CLB, có tìm kiếm/phân trang theo dữ liệu cho phép. |
+| TC‑PB‑15.1‑02 | Thành viên | PB‑15.1 · AC02 | Thành viên thông thường chỉ thấy các trường được phép công khai nội bộ. | Thành viên thông thường chỉ thấy các trường được phép công khai nội bộ. |
+| TC‑PB‑15.1‑03 | Thành viên | PB‑15.1 · AC03 | Không thể mở chi tiết nhạy cảm bằng sửa ID khi thiếu quyền xem chi tiết. | Không thể mở chi tiết nhạy cảm bằng sửa ID khi thiếu quyền xem chi tiết. |
+| TC‑PB‑15.2‑01 | Thành viên | PB‑15.2 · AC01 | Trưởng ban có quyền xem chi tiết chỉ xem được hồ sơ thành viên ban được cấp. | Trưởng ban có quyền xem chi tiết chỉ xem được hồ sơ thành viên ban được cấp. |
+| TC‑PB‑15.2‑02 | Thành viên | PB‑15.2 · AC02 | Xem danh sách toàn CLB không đồng nghĩa được xem chi tiết tất cả thành viên. | Xem danh sách toàn CLB không đồng nghĩa được xem chi tiết tất cả thành viên. |
+| TC‑PB‑15.2‑03 | Thành viên | PB‑15.2 · AC03 | Đổi membershipId sang người ngoài ban bị từ chối; tập trường chi tiết theo chính sách nghiệp vụ đã chốt. | Đổi membershipId sang người ngoài ban bị từ chối; tập trường chi tiết theo chính sách nghiệp vụ đã chốt. |
+| TC‑PB‑17.1‑01 | Phân ban | PB‑17.1 · AC01 | Chỉ membership đủ điều kiện của cùng CLB được thêm vào ban. | Chỉ membership đủ điều kiện của cùng CLB được thêm vào ban. |
+| TC‑PB‑17.1‑02 | Phân ban | PB‑17.1 · AC02 | Không tạo liên kết DepartmentMember trùng. | Không tạo liên kết DepartmentMember trùng. |
+| TC‑PB‑17.1‑03 | Phân ban | PB‑17.1 · AC03 | Quyền tại ban A không cho thêm thành viên vào ban B. | Quyền tại ban A không cho thêm thành viên vào ban B. |
+| TC‑PB‑17.1‑04 | Phân ban | PB‑17.1 · AC04 | Việc một người thuộc nhiều ban áp dụng chính sách quyết định nghiệp vụ đã được PO xác nhận; có audit. | Việc một người thuộc nhiều ban áp dụng chính sách quyết định nghiệp vụ đã được PO xác nhận; có audit. |
+| TC‑PB‑37‑01 | Audit | PB‑37 · AC01 | Xem audit theo quyền và scope, có phân trang và lọc actor/resource/thời gian. | Xem audit theo quyền và scope, có phân trang và lọc actor/resource/thời gian. |
+| TC‑PB‑37‑02 | Audit | PB‑37 · AC02 | Bản ghi thể hiện actor, action, resource, thời điểm và dữ liệu trước/sau được phép lưu. | Bản ghi thể hiện actor, action, resource, thời điểm và dữ liệu trước/sau được phép lưu. |
+| TC‑PB‑37‑03 | Audit | PB‑37 · AC03 | Tài khoản thường không xem log quản trị; không có API tự sửa/xóa audit cho người dùng nghiệp vụ. | Tài khoản thường không xem log quản trị; không có API tự sửa/xóa audit cho người dùng nghiệp vụ. |
+| TC‑PB‑37‑04 | Audit | PB‑37 · AC04 | Log không chứa password/token; trường nhạy cảm được che theo chính sách. | Log không chứa password/token; trường nhạy cảm được che theo chính sách. |
+
+## Tổng kết
+
+- Tổng PBI Sprint 1: **41**
+- Tổng test case Phase 1: **157**
